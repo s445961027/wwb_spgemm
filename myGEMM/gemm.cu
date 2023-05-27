@@ -188,9 +188,11 @@ __global__ void MatrixMul3(const float *A,const float *B,float *C,const int M,co
         for(int k = 0; k < TILE_SIZE_K; k++)
         {   
             for(int mm = 0; mm < THREAD_BLOCK_M; mm++){
+                //二路bank冲突
                 local_A_col[mm] = local_A[threadIdx.y*4 + mm][k];
             }
             for(int nn = 0; nn < THREAD_BLOCK_N; nn++){
+                //四路bank冲突
                 local_B_row[nn] = local_B[k][threadIdx.x*4 + nn];
             }
             
