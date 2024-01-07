@@ -1,0 +1,5 @@
+mpi_spmm/gemm_res/
+mpi_spmm/mat_data/
+mpi_spmm/*.txt
+mpi_spmm/*.o
+mpi_spmm/*.log
